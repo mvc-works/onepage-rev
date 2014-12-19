@@ -1,0 +1,28 @@
+{
+  "name": "onepage-rev",
+  "version": "0.0.2",
+  "description": "One page app rev tool",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rev",
+    "Single Page App"
+  ],
+  "author": "jiyinyiyong",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "fs-extra": "^0.13.0",
+    "lodash": "^2.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jiyinyiyong/onepage-rev.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jiyinyiyong/onepage-rev/issues"
+  },
+  "homepage": "https://github.com/jiyinyiyong/onepage-rev"
+}
