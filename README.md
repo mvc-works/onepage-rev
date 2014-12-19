@@ -8,30 +8,20 @@ Clone files with MD5 hash in filenames before puroduction.
 npm i --save-dev onepage-rev
 ```
 
-```coffee
-rev = require 'onepage-rev'
-rev.config
-  htmlScaner: ->
-  cssScaner: ->
-rev.run
-  base: 'src/'
-  src: 'index.html'
-  dest: 'dist/'
-# => returns a promise
-```
-
 ### Demo
 
 ```coffee
 rev = require 'onepage-rev'
 
 rev.config
+  # required, use RegExp to find recources in HTML
   htmlScaner: (text) ->
     collection = []
     match = text.match /([-\w\.\/]+)\.(css|js)(?=")/g
     collection.push match... if match?
     collection
 
+  # required, use RegExp to find recources in CSS
   cssScaner: (text) ->
     collection = []
     r = /([-\w\.\/@]+)\.(css|jpg|png|woff|eot|ttf|svg)(?=('|\)))/g
@@ -40,11 +30,14 @@ rev.config
     collection
 
   done: ->
+    # you can cb gulp task here
 
 rev.run
   base: __dirname
   src: 'index.html'
+  # dest is relative to base
   dest: './dist/'
+  # when cdn is left undefined, `/` will be used
   cdn: 'https://dn-demo.oss.aliyuncs.com'
 ```
 
